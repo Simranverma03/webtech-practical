@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Student List</h1>
+<table>
+<tr><th>Roll No</th><th>Name</th><th>Branch</th><th>Marks</th></tr>
+{% for s in students %}
+<tr>
+<td>{{ s.roll }}</td>
+<td><a href="{{ url_for('student_detail', name=s.name) }}">{{ s.name }}</a></td>
+<td>{{ s.branch }}</td>
+<td>{{ s.marks }}</td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}

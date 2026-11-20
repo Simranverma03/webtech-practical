@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+{% if student %}
+<h1>Student Details</h1>
+<p><b>Roll No:</b> {{ student.roll }}</p>
+<p><b>Name:</b> {{ student.name }}</p>
+<p><b>Branch:</b> {{ student.branch }}</p>
+<p><b>Marks:</b> {{ student.marks }}
+{% if student.marks >= 80 %} (Distinction){% else %} (Pass){% endif %}</p>
+{% else %}
+<h1>Student not found</h1>
+{% endif %}
+<p><a href="{{ url_for('show_students') }}">Back to list</a></p>
+{% endblock %}
